@@ -13,16 +13,15 @@ set(sources src/main.cpp src/tools.cpp src/FusionEKF.cpp src/kalman_filter.cpp s
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
 
-include_directories(/usr/local/include)
-include_directories(/usr/local/opt/openssl/include)
-link_directories(/usr/local/lib)
-link_directories(/usr/local/opt/openssl/lib)
-link_directories(/usr/local/Cellar/libuv/1.15.0/lib)
+    include_directories(/usr/local/include)
+    include_directories(/usr/local/opt/openssl/include)
+    link_directories(/usr/local/lib)
+    link_directories(/usr/local/opt/openssl/lib)
+    link_directories(/usr/local/Cellar/libuv/1.15.0/lib)
 
-# fckn uws - of course I'm not installing this shit!
-include_directories(~/Documents/uni.uni/udacity/selfdriving_cars/term_2/projects/_res/uWebSockets/src)
-link_directories(~/Documents/uni.uni/udacity/selfdriving_cars/term_2/projects/_res/uWebSockets/build)
-
+    # uws - I don't want to install this with sudo!
+    include_directories(~/Documents/uni.uni/udacity/selfdriving_cars/term_2/projects/_res/uWebSockets/src)
+    link_directories(~/Documents/uni.uni/udacity/selfdriving_cars/term_2/projects/_res/uWebSockets/build)
 
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
 
